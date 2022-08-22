@@ -159,9 +159,9 @@
         </div>
       </form> -->
 
-      <!-- Floating Labels - must put label el below input el and input el must contain
+      <!-- Floating Labels & Form validations- must put label el below input el and input el must contain
       placeholder attribute -->
-      <form>
+      <!-- <form novalidate>
         <div class="form-floating mb-3">
           <input
             type="email"
@@ -170,9 +170,49 @@
             placeholder="place email here"
           />
           <label for="email" class="form-label">Email</label>
+          <div class="invalid-feedback">Invalid Email</div>
+          <div class="valid-feedback">Correct Email</div>
         </div>
-        <button class="btn btn-success">+</button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </form>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+        }
+
+        form.classList.add("was-validated");
+      });
+    </script> -->
+
+    <!-- Buttons -->
+    <button class="btn btn-primary" disabled>Test</button>
+    <!-- lot of bootstrap comp have data-bs-x which is a custom data attr, allows to hook
+    up to the JS portion of bootstrap. -->
+    <button class="btn btn-outline-primary" data-bs-toggle="button">Test</button>
+    <button class="btn btn-outline-primary active" data-bs-toggle="button" aria-pressed="true">Test</button>
+    <button class="btn btn-outline-danger">Test</button>
+    <button class="btn btn-link">Test</button>
+    <a class="btn btn-primary" href="#">Test</a>
+
+    <!-- Button Groups -->
+    <div class="btn-group btn-group-sm">
+      <button class="btn btn-outline-primary">Test</button>
+      <button class="btn btn-outline-danger">Test</button>
+      <button class="btn btn-outline-danger">Test</button>
+      <button class="btn btn-outline-primary">Test</button>
+      <button class="btn btn-outline-danger">Test</button>
+    </div>
+    <!-- on vertical btn group u should remove the class btn-group -->
+    <div class="btn-group-vertical">
+      <button class="btn btn-outline-primary">Test</button>
+      <button class="btn btn-outline-danger">Test</button>
+      <button class="btn btn-outline-danger">Test</button>
+      <button class="btn btn-outline-primary">Test</button>
+      <button class="btn btn-outline-danger">Test</button>
     </div>
   </body>
 </html>
